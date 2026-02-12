@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine’s❤️</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Love+Light&family=Caveat:wght@600&family=Pacifico&family=Montserrat:wght@900&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --rose-gold: #b76e79;
+            --deep-crimson: #910018;
+            --soft-blush: #ffb6c1;
+            --vibrant-pink: #ff85a2;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body, html {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background-color: #000;
+        }
+
+        /* --- PAGE 1 --- */
+        #valentinePage {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-image: url('https://i.ibb.co/5WLXCG0h/download.jpg');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .romantic-card {
+            background: rgba(255, 255, 255, 0.96);
+            width: 90%;
+            max-width: 420px;
+            padding: 50px 20px;
+            text-align: center;
+            border-radius: 65px;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.3);
+            border: 4px solid var(--soft-blush);
+            backdrop-filter: blur(10px);
+            z-index: 10;
+        }
+
+        .header-text h2 {
+            font-family: 'Playfair Display', serif;
+            letter-spacing: 5px;
+            color: var(--rose-gold);
+            font-size: 14px;
+            margin-bottom: -15px;
+        }
+
+        .header-text h1 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: clamp(48px, 12vw, 68px);
+            color: var(--deep-crimson);
+            font-style: italic;
+            margin: 10px 0;
+        }
+
+        .header-text p {
+            font-family: 'Playfair Display', serif;
+            letter-spacing: 3px;
+            color: #777;
+            font-size: 12px;
+            margin-top: -5px;
+        }
+
+        .pink-btn {
+            width: 135px;
+            height: 65px;
+            border-radius: 35px;
+            border: none;
+            background: var(--soft-blush);
+            color: white;
+            font-family: 'Pacifico', cursive;
+            font-size: 22px;
+            cursor: pointer;
+            box-shadow: 10px 10px 20px #e09ba9, -10px -10px 20px pink;
+            transition: 0.3s;
+        }
+
+        #yesBtn { animation: heartBeat 1.5s infinite; }
+
+        @keyframes heartBeat {
+            0% { transform: scale(1); }
+            14% { transform: scale(1.1); }
+            28% { transform: scale(1); }
+        }
+
+        /* --- PAGE 2 --- */
+        #lovePage {
+            position: fixed;
+            inset: 0;
+            display: none;
+            background-image: url('https://i.ibb.co/sdcRh6Tp/Red-Simple-Valentine-s-Day-Instagram-Post.png');
+            background-size: cover;
+            background-position: center;
+            z-index: 9999;
+        }
+
+        .floating-message {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(15px);
+            padding: 35px 20px;
+            border-radius: 45px;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 340px;
+            z-index: 100;
+        }
+
+        .floating-message h3 {
+            font-family: 'Pacifico', cursive;
+            color: var(--vibrant-pink);
+            font-size: 38px;
+            margin-bottom: 12px;
+            font-weight: 400;
+            line-height: 1.2;
+        }
+
+        /* ✅ ONLY CHANGE IS HERE */
+        .hollow-text {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            color: #ff5c8a; /* pink like screenshot */
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            font-size: 15px;
+            line-height: 1.4;
+            text-shadow:
+                0 0 4px rgba(255, 92, 138, 0.6),
+                0 0 8px rgba(255, 92, 138, 0.5),
+                0 0 14px rgba(255, 92, 138, 0.4);
+        }
+
+        .heart {
+            position: absolute;
+            pointer-events: none;
+            z-index: 10000;
+            animation: fall 5s linear forwards;
+        }
+
+        @keyframes fall {
+            0% { transform: translateY(-10vh) scale(1); opacity: 1; }
+            100% { transform: translateY(110vh) scale(2.5); opacity: 0; }
+        }
+    </style>
+</head>
+
+<body>
+
+<div id="valentinePage">
+    <div class="romantic-card">
+        <div class="header-text">
+            <h2>WANNA BE MY</h2>
+            <h1>valentine?</h1>
+            <p>ALWAYS HAVE ME SMILIN'</p>
+        </div>
+
+        <div style="display:flex; justify-content:center; gap:20px; margin-top:30px;">
+            <button class="pink-btn" id="yesBtn">Yes</button>
+            <button class="pink-btn" id="noBtn">No</button>
+        </div>
+    </div>
+</div>
+
+<div id="lovePage"></div>
+
+<audio id="music" loop>
+    <source src="https://www.dropbox.com/scl/fi/8bze6jpl2d02bs7k7vm9v/Kahuti-ft-Kinoti-Feel-The-Love-Official-Video-Kahuti.mp3?raw=1" type="audio/mpeg">
+</audio>
+
+<script>
+    const vPage = document.getElementById('valentinePage');
+    const lPage = document.getElementById('lovePage');
+    const yesBtn = document.getElementById('yesBtn');
+    const noBtn = document.getElementById('noBtn');
+    const music = document.getElementById('music');
+
+    const phrases = [
+        "You’re my favorite person fr. Happy Valentine’s❤️",
+        "You my world baby. That’s enough❤️",
+        "Wanna lockin' with you❤️",
+        "You the Girl i prayed for❤️",
+        "Lav you my baby❤️"
+    ];
+
+    yesBtn.addEventListener('click', () => {
+        vPage.style.display = 'none';
+        lPage.style.display = 'block';
+        music.play().catch(() => {});
+
+        for (let i = 0; i < 6; i++) {
+            spawnMovingBox(phrases[i % phrases.length]);
+        }
+
+        setInterval(createHeart, 150);
+    });
+
+    noBtn.addEventListener('mouseover', () => {
+        noBtn.style.position = 'fixed';
+        noBtn.style.left = Math.random() * 80 + 'vw';
+        noBtn.style.top = Math.random() * 80 + 'vh';
+    });
+
+    function spawnMovingBox(text) {
+        const box = document.createElement('div');
+        box.className = 'floating-message';
+        box.innerHTML = `<h3>Hey my baby</h3><span class="hollow-text">${text}</span>`;
+        lPage.appendChild(box);
+
+        let posX = Math.random() * (window.innerWidth - 340);
+        let posY = Math.random() * (window.innerHeight - 200);
+        let velX = (Math.random() - 0.5) * 3.5;
+        let velY = (Math.random() - 0.5) * 3.5;
+
+        function move() {
+            posX += velX;
+            posY += velY;
+
+            if (posX <= 0 || posX >= window.innerWidth - 340) velX *= -1;
+            if (posY <= 0 || posY >= window.innerHeight - 200) velY *= -1;
+
+            box.style.left = posX + 'px';
+            box.style.top = posY + 'px';
+
+            if (lPage.style.display === 'block') {
+                requestAnimationFrame(move);
+            }
+        }
+        move();
+    }
+
+    function createHeart() {
+        const h = document.createElement('div');
+        h.className = 'heart';
+        h.innerHTML = '❤️';
+        h.style.left = Math.random() * 100 + 'vw';
+        h.style.fontSize = (Math.random() * 50 + 50) + 'px';
+        document.body.appendChild(h);
+        setTimeout(() => h.remove(), 5000);
+    }
+</script>
+
+</body>
+</html>
